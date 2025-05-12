@@ -36,13 +36,13 @@ python notice.py
 
 text
 notice.py
-├── API_KEYS         # список ваших API-ключей
-├── get_api_key()    # возвращает следующий ключ из цикла
-├── safe_request()   # объединяет логику запросов с ротацией ключей
-├── fetch_organizations(okved)  # постраничный поиск по ОКВЭД
-├── fetch_contacts(ogrn)        # получение телефонов и e-mail
-├── AnimatedButton    # виджет кнопки с анимацией размера
-└── MainWindow        # главное окно приложения
+   API_KEYS         # список ваших API-ключей
+   get_api_key()    # возвращает следующий ключ из цикла
+   safe_request()   # объединяет логику запросов с ротацией ключей
+   fetch_organizations(okved)  # постраничный поиск по ОКВЭД
+   fetch_contacts(ogrn)        # получение телефонов и e-mail
+   AnimatedButton    # виджет кнопки с анимацией размера
+   MainWindow        # главное окно приложения
 Описание основных компонентов
 1. get_api_key() Возвращает следующий API-ключ из списка API_KEYS по кругу.
 2. safe_request(url, params)
