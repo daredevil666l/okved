@@ -41,8 +41,9 @@ pyinstaller main.py
 3.  
 Запуск
 
-bash
-python notice.py
+```
+python main.py
+```
 После запуска откроется окно приложения “Notice”.
 Конфигурация
 * В списке API_KEYS перечислите свои ключи Checko.
