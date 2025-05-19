@@ -403,9 +403,17 @@ class NoticeApp:
             if "Емэйл" in contacts and contacts["Емэйл"] and len(contacts["Емэйл"]) > 0:
                 result["email"] = contacts["Емэйл"][0]
 
-            # Телефон
-            if "Тел" in contacts and contacts["Тел"] and len(contacts["Тел"]) > 0:
-                result["phone"] = contacts["Тел"][0]
+            # Телефон - исправлено для обработки нескольких номеров
+            if "Тел" in contacts:
+                # Проверяем, что поле "Тел" существует и не пустое
+                if contacts["Тел"]:
+                    # Проверяем, является ли "Тел" списком
+                    if isinstance(contacts["Тел"], list) and len(contacts["Тел"]) > 0:
+                        # Объединяем все телефоны через запятую
+                        result["phone"] = ", ".join(contacts["Тел"])
+                    # Если "Тел" - строка, используем как есть
+                    elif isinstance(contacts["Тел"], str):
+                        result["phone"] = contacts["Тел"]
 
         return result
 
